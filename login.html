@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <style>
+        html{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 align="center">login DB</h1>
+    <div>
+        <input type="text" name="loginText" align="center"><br/>
+    
+        <input type="password" name="LoginPass" align="center"><br/>
+        <br/>
+        <button type="submit" align="center">login</button>
+    </div>
+   
+    <script>
+        //pull data from the input loginText
+        var loginText = document.querySelector("input[name=loginText]");
+        //pull data from the input LoginPass
+        var LoginPass = document.querySelector("input[name=LoginPass]");
+        var acess_request = 0;
+
+        //check the button pressed
+        document.querySelector("button").addEventListener("click", function(){
+            if(loginText.value == "PFAdmin135RT" && LoginPass.value == "PFAdminRT"){
+                alert("login efetuado com sucesso");
+                acess_request = 1;
+            }else{
+                alert("login ou senha incorretos");
+            }
+
+            if(acess_request == 1){
+                window.location.href = "http://localhost:3000/mainDb";
+            }
+            
+        });
+        
+    </script>
+</body>
+</html>
